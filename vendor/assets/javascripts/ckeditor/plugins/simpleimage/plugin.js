@@ -1,6 +1,8 @@
 /**
  * Basic sample plugin inserting current date and time into CKEditor editing area.
  */
+(function(){
+
 
 // Register the plugin with the editor.
 // http://docs.cksource.com/ckeditor_api/symbols/CKEDITOR.plugins.html
@@ -23,7 +25,7 @@ CKEDITOR.plugins.add( 'simpleimage',
 					// http://docs.cksource.com/ckeditor_api/symbols/CKEDITOR.editor.html#insertHtml
 					editor.insertHtml( 'The current date and time is: <em>' + timestamp.toString() + '</em>' );
 				}
-			});
+			});	
 		// Create a toolbar button that executes the plugin command. 
 		// http://docs.cksource.com/ckeditor_api/symbols/CKEDITOR.ui.html#addButton
 		editor.ui.addButton( 'Simple Image',
@@ -37,3 +39,5 @@ CKEDITOR.plugins.add( 'simpleimage',
 		} );
 	}
 });
+
+})();

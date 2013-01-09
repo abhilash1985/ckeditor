@@ -1,7 +1,7 @@
 /**
  * Basic sample plugin inserting current date and time into CKEditor editing area.
  */
-(function(){
+
 // Register the plugin with the editor.
 // http://docs.cksource.com/ckeditor_api/symbols/CKEDITOR.plugins.html
 CKEDITOR.plugins.add( 'simpleimage',
@@ -37,5 +37,3 @@ CKEDITOR.plugins.add( 'simpleimage',
 		} );
 	}
 } 
-
-)();

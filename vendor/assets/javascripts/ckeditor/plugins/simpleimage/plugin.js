@@ -36,4 +36,4 @@ CKEDITOR.plugins.add( 'simpleimage',
 			icon: this.path + 'images/timestamp.png'
 		} );
 	}
-} 
+});

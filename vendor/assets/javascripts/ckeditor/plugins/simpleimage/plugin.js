@@ -33,7 +33,7 @@ CKEDITOR.plugins.add( 'simpleimage',
 			// Reference to the plugin command name.
 			command: 'insertImage',
 			// Button's icon file path.
-			icon: this.path + 'images/timestamp.png'
+			icon: this.path + 'images/image.png'
 		} );
 	}
 });

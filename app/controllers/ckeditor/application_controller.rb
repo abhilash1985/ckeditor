@@ -14,9 +14,11 @@ class Ckeditor::ApplicationController < ::ApplicationController
     end
     
     def respond_with_asset(asset)
+      puts 'responding'
       file = params[:CKEditor].blank? ? params[:qqfile] : params[:upload]
 	    asset.data = Ckeditor::Http.normalize_param(file, request)
-	    
+	    puts 'after normalize'
+      
 	    callback = ckeditor_before_create_asset(asset)
 	    
       if callback && asset.save
@@ -26,6 +28,8 @@ class Ckeditor::ApplicationController < ::ApplicationController
         
         render :text => body
       else
+        puts asset.errors
+        puts asset.to_json
         render :nothing => true
       end
     end

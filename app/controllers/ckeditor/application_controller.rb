@@ -28,7 +28,7 @@ class Ckeditor::ApplicationController < ::ApplicationController
         
         render :text => body
       else
-        puts asset.errors
+        puts asset.errors.to_json
         puts asset.to_json
         render :nothing => true
       end

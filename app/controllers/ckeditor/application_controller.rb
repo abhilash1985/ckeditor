@@ -26,8 +26,10 @@ class Ckeditor::ApplicationController < ::ApplicationController
         
         render :text => body
       else
-        puts asset.errors.to_json
-        render :nothing => true
+        body = %Q"<script type='text/javascript'>
+         alert('Error');
+        </script>"
+        render :text => body
       end
     end
 end

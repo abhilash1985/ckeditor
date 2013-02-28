@@ -27,7 +27,7 @@ class Ckeditor::ApplicationController < ::ApplicationController
         render :text => body
       else
         body = %Q"<script type='text/javascript'>
-         if (typeof window.ckeditorCallback == 'function') { window.ckeditorCallback('error');  }
+         if (typeof window.parent.ckeditorCallback == 'function') { window.parent.ckeditorCallback('error');  }
         </script>"
         render :text => body
       end

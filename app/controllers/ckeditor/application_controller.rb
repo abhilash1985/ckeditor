@@ -22,6 +22,7 @@ class Ckeditor::ApplicationController < ::ApplicationController
       if callback && asset.save
         body = params[:CKEditor].blank? ? asset.to_json(:only=>[:id, :type]) : %Q"<script type='text/javascript'>
           window.parent.CKEDITOR.tools.callFunction(#{params[:CKEditorFuncNum]}, '#{Ckeditor::Utils.escape_single_quotes(asset.url_content)}');
+          if (typeof window.parent.ckeditorCallback == 'function') { window.parent.ckeditorCallback('clear');  }
         </script>"
         
         render :text => body

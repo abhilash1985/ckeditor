@@ -26,9 +26,11 @@ class Ckeditor::ApplicationController < ::ApplicationController
         
         render :text => body
       else
-        body = %Q"<script type='text/javascript'>
-         if (typeof window.parent.ckeditorCallback == 'function') { window.parent.ckeditorCallback('error');  }
+         body = params[:CKEditor].blank? ? asset.to_json(:only=>[:id, :type]) : %Q"<script type='text/javascript'>
+          window.parent.CKEDITOR.tools.callFunction(#{params[:CKEditorFuncNum]}, '#{Ckeditor::Utils.escape_single_quotes(asset.url_content)}');
+           if (typeof window.parent.ckeditorCallback == 'function') { window.parent.ckeditorCallback('error');  }
         </script>"
+    
         render :text => body
       end
     end

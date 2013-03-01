@@ -403,6 +403,12 @@ CKEDITOR.dialog.add( 'link', function( editor )
 		minHeight : 230,
 		contents : [
 			{
+				id : 'info',
+				label : '',
+				title : '',
+				elements :
+				[
+					{
 						id : 'linkType',
 						type : 'select',
 						label : linkLang.type,
@@ -759,6 +765,8 @@ CKEDITOR.dialog.add( 'link', function( editor )
 								this.getElement().hide();
 						}
 					}
+				]
+			}
 			
 			
 		],

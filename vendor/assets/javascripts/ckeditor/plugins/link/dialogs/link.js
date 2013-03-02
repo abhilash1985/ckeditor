@@ -483,6 +483,7 @@ CKEDITOR.dialog.add( 'link', function( editor )
 										onLoad : function ()
 										{
 											this.allowOnChange = true;
+											$(this).addClass('url_text');
 										},
 										onKeyUp : function()
 										{

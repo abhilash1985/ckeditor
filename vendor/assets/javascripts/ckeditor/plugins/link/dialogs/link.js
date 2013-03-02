@@ -414,7 +414,7 @@ CKEDITOR.dialog.add( 'link', function( editor )
 						label : linkLang.type,
 						'default' : 'url',
 						onLoad: function(){
-							$("#" + this.domId).find('select').parent().addClass("combo_wrapper");
+							$("#" + this.domId).find('select').parent().addClass("combo_wrapper").addClass("large_size");
 						}
 						,
 						items :
